@@ -7,7 +7,7 @@ from plotly import tools
 from plotly.subplots import make_subplots
 
 st.title('WORDLE SCOREBOARD')
-st.info('ayyyyo')
+st.info('Have included game totals - total, wins, and losses. plans next include claning the numbers to only show one decimal place. To also have guess totals like on the actual app. Also want a pie chart on top of the site to compare total wins')
 
 ################
 ### read ins ###
