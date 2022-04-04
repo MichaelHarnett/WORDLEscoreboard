@@ -49,7 +49,28 @@ chris_avg = chriswindf.score.sum()/len(chriswindf)
 dadwindf.score = dadwindf.score.astype(int)
 dad_avg = dadwindf.score.sum()/len(dadwindf)
 
+################################
+##### games played numbers #####
+################################
+#michael
+michael_totalgamesplayed = len(michaeldf)
+michael_winnum = len(michaelwindf)
+michael_lossnum = len(michaeldf)-len(michaelwindf)
 
+#danielle
+danielle_totalgamesplayed = len(danielledf)
+danielle_winnum = len(daniellewindf)
+danielle_lossnum = len(danielledf)-len(daniellewindf)
+
+#chris
+chris_totalgamesplayed = len(chrisdf)
+chris_winnum = len(chriswindf)
+chris_lossnum = len(chrisdf)-len(chriswindf)
+
+#dad
+dad_totalgamesplayed = len(daddf)
+dad_winnum = len(dadwindf)
+dad_lossnum = len(daddf)-len(dadwindf)
 
 
 ##################
@@ -57,6 +78,7 @@ dad_avg = dadwindf.score.sum()/len(dadwindf)
 ##################
 ### michael's info
 st.header('Michael')
+st.write('Total games played:', michael_totalgamesplayed, 'Games won:', michael_winnum, 'Games lost:', michael_lossnum)
 st.write('Win percent:' , michael_winpercent)
 st.write('Average guess score:', michael_avg)
 
