@@ -6,7 +6,8 @@ import plotly.graph_objs as go
 from plotly import tools
 from plotly.subplots import make_subplots
 
-st.title('WORDLE')
+st.title('WORDLE SCOREBOARD')
+st.info('ayyyyo')
 
 ################
 ### read ins ###
