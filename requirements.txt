@@ -7,3 +7,4 @@ Keras-Preprocessing
 matplotlib
 Pillow
 tensorflow
+plotly
