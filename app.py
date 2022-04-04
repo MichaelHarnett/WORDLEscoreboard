@@ -84,15 +84,18 @@ st.write('Average guess score:', michael_avg)
 
 ### danielle's info
 st.header('Danielle')
+st.write('Total games played:', danielle_totalgamesplayed, 'Games won:', danielle_winnum, 'Games lost:', danielle_lossnum)
 st.write('Win percent:', danielle_winpercent)
 st.write('Average guess score:', danielle_avg)
 
 ###Chris' info
 st.header('Chris')
+st.write('Total games played:', chris_totalgamesplayed, 'Games won:', chris_winnum, 'Games lost:', chris_lossnum)
 st.write('Win percent:', chris_winpercent)
 st.write('Average guess score:', chris_avg)
 
 ### Dad's info
 st.header('Dad')
+st.write('Total games played:', dad_totalgamesplayed, 'Games won:', dad_winnum, 'Games lost:', dad_lossnum)
 st.write('Win percent:', dad_winpercent)
 st.write('Average guess score:', dad_avg)
