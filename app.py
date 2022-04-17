@@ -8,7 +8,7 @@ from plotly import tools
 from plotly.subplots import make_subplots
 
 st.title('WORDLE SCOREBOARD')
-st.info('Have included game totals - total, wins, and losses. plans next include claning the numbers to only show one decimal place. To also have guess totals like on the actual app. Also want a pie chart on top of the site to compare total wins')
+st.info('next plan - make graphs for guesses interactive, and match the background of the site, opposed to just a white background. STill need a pie chart for total wins.')
 
 ################
 ### read ins ###
@@ -188,15 +188,13 @@ with st.expander('Missing Game Numbers'):
     st.write(michael_missing)
     
     
-       
+# guess chart       
 michael_guesschart = plt.gca()
 michael_guesschart.invert_yaxis()
 michael_guesschart.barh(x_range, michael_guesscount)
 michael_guesschart.figure
 
 
-
-#st.bar_chart(x_range, michael_guesscount)    
 
     
 
@@ -207,6 +205,13 @@ st.write('Win Percent:', danielle_winpercent)
 st.write('Average Guess Score:', danielle_avg)
 with st.expander('Missing Game Numbers'):
     st.write(danielle_missing)
+    
+#guess chart
+danielle_guesschart = plt.gca()
+danielle_guesschart.invert_yaxis()
+danielle_guesschart.barh(x_range, danielle_guesscount)
+danielle_guesschart.figure
+    
 
 ###Chris' info
 st.header('Chris')
@@ -216,6 +221,14 @@ st.write('Average Guess Score:', chris_avg)
 with st.expander('Missing Game Numbers'):
     st.write(chris_missing)
 
+    
+#guess chart
+chris_guesschart = plt.gca()
+chris_guesschart.invert_yaxis()
+chris_guesschart.barh(x_range, chris_guesscount)
+chris_guesschart.figure
+    
+    
 ### Dad's info
 st.header('Dad')
 st.write('Total Games Played:', dad_totalgamesplayed, 'Games Won:', dad_winnum, 'Games Lost:', dad_lossnum, 'Games Missed:', dad_missing_tot)
@@ -224,5 +237,8 @@ st.write('Average Guess Score:', dad_avg)
 with st.expander('Missing Game Numbers'):
     st.write(dad_missing)
     
-    
-st.bar_chart(michaeldf.game_num)
+# guess chart
+dad_guesschart = plt.gca()
+dad_guesschart.invert_yaxis()
+dad_guesschart.barh(x_range, dad_guesscount)
+dad_guesschart.figure
