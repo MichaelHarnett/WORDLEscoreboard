@@ -74,29 +74,59 @@ dad_winnum = len(dadwindf)
 dad_lossnum = len(daddf)-len(dadwindf)
 
 
+##############################
+##### missing games info #####
+##############################
+
+#me
+michael_games = sorted(michaeldf.game_num)
+michael_missing = [item for item in range(michael_games[0], michael_games[-1]+1) if item not in michael_games]
+michael_missing_tot = len(michael_missing)
+
+#danielle
+danielle_games = sorted(danielledf.game_num)
+danielle_missing = [item for item in range(danielle_games[0], danielle_games[-1]+1) if item not in danielle_games]
+danielle_missing_tot = len(danielle_missing)
+
+#chris
+chris_games = sorted(chrisdf.game_num)
+chris_missing = [item for item in range(chris_games[0], chris_games[-1]+1) if item not in chris_games]
+chris_missing_tot = len(chris_missing)
+
+#dad
+dad_games = sorted(daddf.game_num)
+dad_missing = [item for item in range(dad_games[0], dad_games[-1]+1) if item not in dad_games]
+dad_missing_tot = len(dad_missing)
+
+
+
 ##################
 ##### prints #####
 ##################
 ### michael's info
 st.header('Michael')
-st.write('Total games played:', michael_totalgamesplayed, 'Games won:', michael_winnum, 'Games lost:', michael_lossnum)
-st.write('Win percent:' , michael_winpercent)
-st.write('Average guess score:', michael_avg)
+st.write('Total Games Played:', michael_totalgamesplayed, 'Games Won:', michael_winnum, 'Games Lost:', michael_lossnum, 'Games Missed:', michael_missing_tot)
+st.write('Win Percent:' , michael_winpercent)
+st.write('Average Guess Score:', michael_avg)
+st.write('Missing Games:', michael_missing)
 
 ### danielle's info
 st.header('Danielle')
-st.write('Total games played:', danielle_totalgamesplayed, 'Games won:', danielle_winnum, 'Games lost:', danielle_lossnum)
-st.write('Win percent:', danielle_winpercent)
-st.write('Average guess score:', danielle_avg)
+st.write('Total Games Played:', danielle_totalgamesplayed, 'Games Won:', danielle_winnum, 'Games Lost:', danielle_lossnum, 'Games Missed:', danielle_missing_tot)
+st.write('Win Percent:', danielle_winpercent)
+st.write('Average Guess Score:', danielle_avg)
+st.write('Missing Games:', danielle_missing)
 
 ###Chris' info
 st.header('Chris')
-st.write('Total games played:', chris_totalgamesplayed, 'Games won:', chris_winnum, 'Games lost:', chris_lossnum)
-st.write('Win percent:', chris_winpercent)
-st.write('Average guess score:', chris_avg)
+st.write('Total Games Played:', chris_totalgamesplayed, 'Games Won:', chris_winnum, 'Games Lost:', chris_lossnum, 'Games Missed:', chris_missing_tot)
+st.write('Win Percent:', chris_winpercent)
+st.write('Average Guess Score:', chris_avg)
+st.write('Missing Games:', chris_missing)
 
 ### Dad's info
 st.header('Dad')
-st.write('Total games played:', dad_totalgamesplayed, 'Games won:', dad_winnum, 'Games lost:', dad_lossnum)
-st.write('Win percent:', dad_winpercent)
-st.write('Average guess score:', dad_avg)
+st.write('Total Games Played:', dad_totalgamesplayed, 'Games Won:', dad_winnum, 'Games Lost:', dad_lossnum, 'Games Missed:', dad_missing_tot)
+st.write('Win Percent:', dad_winpercent)
+st.write('Average Guess Score:', dad_avg)
+st.write('Missing Games:', chris_missing)
