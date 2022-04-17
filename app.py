@@ -100,6 +100,78 @@ dad_missing_tot = len(dad_missing)
 
 
 
+#########################
+##### guess counter #####
+#########################
+
+#michael
+michael1wins = len(michaeldf[michaeldf.score == '1'])
+michael2wins = len(michaeldf[michaeldf.score == '2'])
+michael3wins = len(michaeldf[michaeldf.score == '3'])
+michael4wins = len(michaeldf[michaeldf.score == '4'])
+michael5wins = len(michaeldf[michaeldf.score == '5'])
+michael6wins = len(michaeldf[michaeldf.score == '6'])
+michael_guesscount = []
+michael_guesscount.append(michael1wins)
+michael_guesscount.append(michael2wins)
+michael_guesscount.append(michael3wins)
+michael_guesscount.append(michael4wins)
+michael_guesscount.append(michael5wins)
+michael_guesscount.append(michael6wins)
+
+#dad
+dad1wins = len(daddf[daddf.score == '1'])
+dad2wins = len(daddf[daddf.score == '2'])
+dad3wins = len(daddf[daddf.score == '3'])
+dad4wins = len(daddf[daddf.score == '4'])
+dad5wins = len(daddf[daddf.score == '5'])
+dad6wins = len(daddf[daddf.score == '6'])
+dad_guesscount = []
+dad_guesscount.append(dad1wins)
+dad_guesscount.append(dad2wins)
+dad_guesscount.append(dad3wins)
+dad_guesscount.append(dad4wins)
+dad_guesscount.append(dad5wins)
+dad_guesscount.append(dad6wins)
+
+
+#danielle
+danielle1wins = len(danielledf[danielledf.score == '1'])
+danielle2wins = len(danielledf[danielledf.score == '2'])
+danielle3wins = len(danielledf[danielledf.score == '3'])
+danielle4wins = len(danielledf[danielledf.score == '4'])
+danielle5wins = len(danielledf[danielledf.score == '5'])
+danielle6wins = len(danielledf[danielledf.score == '6'])
+danielle_guesscount = []
+danielle_guesscount.append(danielle1wins)
+danielle_guesscount.append(danielle2wins)
+danielle_guesscount.append(danielle3wins)
+danielle_guesscount.append(danielle4wins)
+danielle_guesscount.append(danielle5wins)
+danielle_guesscount.append(danielle6wins)
+
+
+#chris
+chris1wins = len(chrisdf[chrisdf.score == '1'])
+chris2wins = len(chrisdf[chrisdf.score == '2'])
+chris3wins = len(chrisdf[chrisdf.score == '3'])
+chris4wins = len(chrisdf[chrisdf.score == '4'])
+chris5wins = len(chrisdf[chrisdf.score == '5'])
+chris6wins = len(chrisdf[chrisdf.score == '6'])
+chris_guesscount = []
+chris_guesscount.append(chris1wins)
+chris_guesscount.append(chris2wins)
+chris_guesscount.append(chris3wins)
+chris_guesscount.append(chris4wins)
+chris_guesscount.append(chris5wins)
+chris_guesscount.append(chris6wins)
+
+
+
+
+
+
+
 ##################
 ##### prints #####
 ##################
@@ -135,3 +207,6 @@ st.write('Win Percent:', dad_winpercent)
 st.write('Average Guess Score:', dad_avg)
 with st.expander('Missing Game Numbers'):
     st.write(dad_missing)
+    
+    
+st.bar_chart(michaeldf.game_num)
