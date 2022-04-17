@@ -118,7 +118,7 @@ st.write('Total Games Played:', danielle_totalgamesplayed, 'Games Won:', daniell
 st.write('Win Percent:', danielle_winpercent)
 st.write('Average Guess Score:', danielle_avg)
 with st.expander('Missing Game Numbers'):
-    st.write(daniele_missing)
+    st.write(danielle_missing)
 
 ###Chris' info
 st.header('Chris')
