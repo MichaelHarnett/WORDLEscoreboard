@@ -117,18 +117,21 @@ st.header('Danielle')
 st.write('Total Games Played:', danielle_totalgamesplayed, 'Games Won:', danielle_winnum, 'Games Lost:', danielle_lossnum, 'Games Missed:', danielle_missing_tot)
 st.write('Win Percent:', danielle_winpercent)
 st.write('Average Guess Score:', danielle_avg)
-st.write('Missing Games:', danielle_missing)
+with st.expander('Missing Game Numbers'):
+    st.write(daniele_missing)
 
 ###Chris' info
 st.header('Chris')
 st.write('Total Games Played:', chris_totalgamesplayed, 'Games Won:', chris_winnum, 'Games Lost:', chris_lossnum, 'Games Missed:', chris_missing_tot)
 st.write('Win Percent:', chris_winpercent)
 st.write('Average Guess Score:', chris_avg)
-st.write('Missing Games:', chris_missing)
+with st.expander('Missing Game Numbers'):
+    st.write(chris_missing)
 
 ### Dad's info
 st.header('Dad')
 st.write('Total Games Played:', dad_totalgamesplayed, 'Games Won:', dad_winnum, 'Games Lost:', dad_lossnum, 'Games Missed:', dad_missing_tot)
 st.write('Win Percent:', dad_winpercent)
 st.write('Average Guess Score:', dad_avg)
-st.write('Missing Games:', chris_missing)
+with st.expander('Missing Game Numbers'):
+    st.write(dad_missing)
