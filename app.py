@@ -184,10 +184,10 @@ with st.expander('Missing Game Numbers'):
     st.write(michael_missing)
        
     
-# michael_guesschart = plt.gca().invert_yaxis()
+michael_guesschart = plt.gca().invert_yaxis()
 
-# michael_guesschart.barh(x_range, michael_guesscount)
-# st.write(michael_guesscount)
+michael_guesschart.barh(x_range, michael_guesscount)
+st.write(michael_guesschart)
 
 
 
