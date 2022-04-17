@@ -185,9 +185,10 @@ st.write('Win Percent:' , michael_winpercent)
 st.write('Average Guess Score:', michael_avg)
 with st.expander('Missing Game Numbers'):
     st.write(michael_missing)
-       
     
-# michael_guesschart = plt.gca()
+    
+       
+michael_guesschart = plt.gca()
 michael_guesschart.invert_yaxis()
 michael_guesschart.barh(x_range, michael_guesscount)
 # st.write(michael_guesscoun)
