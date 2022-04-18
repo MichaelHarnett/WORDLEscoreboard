@@ -193,7 +193,7 @@ michael_guesschart = plt.figure(1)
 michael_guesschart = plt.gca()
 michael_guesschart.invert_yaxis()
 michael_guesschart.barh(x_range, michael_guesscount)
-michael_guesschart.figure(1)
+michael_guesschart.figure()
 
 
 
