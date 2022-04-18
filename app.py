@@ -195,7 +195,7 @@ michael_guesschart.invert_yaxis()
 michael_guesschart = michael_guesschart.barh(x_range, michael_guesscount)
 michael_chartdata = (x_range, michael_guesscount)
 plt.barh(x_range, michael_guesscount)
-st.bar_chart(x_range, michael_guesscount)
+#st.bar_chart(x_range, michael_guesscount)
 
 
 
