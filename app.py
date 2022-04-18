@@ -106,7 +106,7 @@ dad_missing_tot = len(dad_missing)
 #########################
 
 # x axis for graphs
-x_range = ['1','2','3','4','5','6']
+x_range = [1,2,3,4,5,6]
 
 #michael
 michael1wins = len(michaeldf[michaeldf.score == '1'])
