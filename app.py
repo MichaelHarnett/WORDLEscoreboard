@@ -189,10 +189,10 @@ with st.expander('Missing Game Numbers'):
     
     
 # guess chart 
-michael_guesschart = plt.figure(1)
+michael_guesschart = plt.figure()
 michael_guesschart = plt.gca()
 michael_guesschart.invert_yaxis()
-michael_guesschart.barh(x_range, michael_guesscount)
+michael_guesschat = michael_guesschart.barh(x_range, michael_guesscount)
 michael_guesschart.figure()
 
 
@@ -211,8 +211,8 @@ with st.expander('Missing Game Numbers'):
 #guess chart
 danielle_guesschart = plt.gca()
 danielle_guesschart.invert_yaxis()
-danielle_guesschart.barh(x_range, danielle_guesscount)
-danielle_guesschart.figure(2)
+danielle_guesschart = danielle_guesschart.barh(x_range, danielle_guesscount)
+danielle_guesschart.figure()
     
 
 ###Chris' info
