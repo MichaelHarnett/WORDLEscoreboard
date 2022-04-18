@@ -192,9 +192,8 @@ with st.expander('Missing Game Numbers'):
 michael_guesschart = plt.gca()
 michael_guesschart.invert_yaxis()
 michael_guesschart.barh(x_range, michael_guesscount)
-michael_guesschart.figure
+michael_guesschart.figure(1)
 
-st.bar_chart(x_range,michael_guesscount)
 
 
 
@@ -212,7 +211,7 @@ with st.expander('Missing Game Numbers'):
 danielle_guesschart = plt.gca()
 danielle_guesschart.invert_yaxis()
 danielle_guesschart.barh(x_range, danielle_guesscount)
-danielle_guesschart.figure
+danielle_guesschart.figure(2)
     
 
 ###Chris' info
