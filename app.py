@@ -193,7 +193,7 @@ michael_guesschart = plt.figure()
 michael_guesschart = plt.gca()
 michael_guesschart.invert_yaxis()
 michael_guesschart = michael_guesschart.barh(x_range, michael_guesscount)
-micheal_chartdata = (x_range, michael_guesscount)
+michael_chartdata = (x_range, michael_guesscount)
 st.bar_chart(michael_chartdata)
 
 
