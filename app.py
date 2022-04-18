@@ -194,6 +194,8 @@ michael_guesschart.invert_yaxis()
 michael_guesschart.barh(x_range, michael_guesscount)
 michael_guesschart.figure
 
+st.bar_chart(x_range,michael_guesscount)
+
 
 
     
