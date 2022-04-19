@@ -106,7 +106,7 @@ dad_missing_tot = len(dad_missing)
 #########################
 
 # x axis for graphs
-x_range = [1,2,3,4,5,6]
+guess_range = ['6', '5', '4', '3', '2', '1']
 
 #michael
 michael1wins = len(michaeldf[michaeldf.score == '1'])
@@ -122,6 +122,7 @@ michael_guesscount.append(michael3wins)
 michael_guesscount.append(michael4wins)
 michael_guesscount.append(michael5wins)
 michael_guesscount.append(michael6wins)
+michael_guesscount = michael_guesscount[::-1]
 
 #dad
 dad1wins = len(daddf[daddf.score == '1'])
@@ -137,6 +138,7 @@ dad_guesscount.append(dad3wins)
 dad_guesscount.append(dad4wins)
 dad_guesscount.append(dad5wins)
 dad_guesscount.append(dad6wins)
+dad_guesscount = dad_guesscount[::-1]
 
 
 #danielle
@@ -153,6 +155,7 @@ danielle_guesscount.append(danielle3wins)
 danielle_guesscount.append(danielle4wins)
 danielle_guesscount.append(danielle5wins)
 danielle_guesscount.append(danielle6wins)
+danielle_guesscount = danielle_guesscount[::-1]
 
 
 #chris
@@ -169,7 +172,7 @@ chris_guesscount.append(chris3wins)
 chris_guesscount.append(chris4wins)
 chris_guesscount.append(chris5wins)
 chris_guesscount.append(chris6wins)
-
+chris_guesscount = chris_guesscount[::-1]
 
 
 
