@@ -109,6 +109,7 @@ dad_missing_tot = len(dad_missing)
 guess_range = ['6', '5', '4', '3', '2', '1']
 
 #michael
+michaeldf.score = michaeldf.score.astype('str')
 michael1wins = len(michaeldf[michaeldf.score == '1'])
 michael2wins = len(michaeldf[michaeldf.score == '2'])
 michael3wins = len(michaeldf[michaeldf.score == '3'])
@@ -125,6 +126,7 @@ michael_guesscount.append(michael6wins)
 michael_guesscount = michael_guesscount[::-1]
 
 #dad
+daddf.score = daddf.score.astype('str')
 dad1wins = len(daddf[daddf.score == '1'])
 dad2wins = len(daddf[daddf.score == '2'])
 dad3wins = len(daddf[daddf.score == '3'])
@@ -142,6 +144,7 @@ dad_guesscount = dad_guesscount[::-1]
 
 
 #danielle
+danielledf.score = danielledf.score.astype('str')
 danielle1wins = len(danielledf[danielledf.score == '1'])
 danielle2wins = len(danielledf[danielledf.score == '2'])
 danielle3wins = len(danielledf[danielledf.score == '3'])
@@ -159,6 +162,7 @@ danielle_guesscount = danielle_guesscount[::-1]
 
 
 #chris
+chrisdf.score = chrisdf.score.astype('str')
 chris1wins = len(chrisdf[chrisdf.score == '1'])
 chris2wins = len(chrisdf[chrisdf.score == '2'])
 chris3wins = len(chrisdf[chrisdf.score == '3'])
