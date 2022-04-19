@@ -194,6 +194,8 @@ with st.expander('Missing Game Numbers'):
 # guess chart 
 
 michael_guesschart = px.bar(x = michael_guesscount, y = guess_range, orientation = 'h')
+michael_guesschart.update_traces(hovertemplate=None)
+michael_guesschart.update_layout(hovermode="y")
 st.plotly_chart(michael_guesschart)
 
 
@@ -209,10 +211,10 @@ with st.expander('Missing Game Numbers'):
     st.write(danielle_missing)
     
 #guess chart
-danielle_guesschart = plt.gca()
-danielle_guesschart.invert_yaxis()
-danielle_guesschart = danielle_guesschart.barh(x_range, danielle_guesscount)
-danielle_guesschart.figure
+danielle_guesschart = px.bar(x = danielle_guesscount, y = guess_range, orientation = 'h')
+danielle_guesschart.update_traces(hovertemplate=None)
+danielle_guesschart.update_layout(hovermode="y")
+st.plotly_chart(danielle_guesschart)
     
 
 ###Chris' info
@@ -225,11 +227,10 @@ with st.expander('Missing Game Numbers'):
 
     
 #guess chart
-chris_guesschart = plt.gca()
-chris_guesschart.invert_yaxis()
-chris_guesschart.barh(x_range, chris_guesscount)
-chris_guesschart.figure
-    
+chris_guesschart = px.bar(x = chris_guesscount, y = guess_range, orientation = 'h')
+chris_guesschart.update_traces(hovertemplate=None)
+chris_guesschart.update_layout(hovermode="y")
+st.plotly_chart(chris_guesschart)
     
 ### Dad's info
 st.header('Dad')
@@ -240,7 +241,7 @@ with st.expander('Missing Game Numbers'):
     st.write(dad_missing)
     
 # guess chart
-dad_guesschart = plt.gca()
-dad_guesschart.invert_yaxis()
-dad_guesschart.barh(x_range, dad_guesscount)
-dad_guesschart.figure
+dad_guesschart = px.bar(x = dad_guesscount, y = guess_range, orientation = 'h')
+dad_guesschart.update_traces(hovertemplate=None)
+dad_guesschart.update_layout(hovermode="y")
+st.plotly_chart(dad_guesschart)
