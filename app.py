@@ -189,10 +189,11 @@ with st.expander('Missing Game Numbers'):
     
     
 # guess chart 
-michael_guesschart = plt.figure()
+
 michael_guesschart = plt.gca()
 michael_guesschart.invert_yaxis()
 michael_guesschart = michael_guesschart.barh(x_range, michael_guesscount)
+michael_guesschart.show()
 michael_chartdata = (x_range, michael_guesscount)
 plt.barh(x_range, michael_guesscount).figure
 
