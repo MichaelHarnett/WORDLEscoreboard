@@ -193,7 +193,7 @@ with st.expander('Missing Game Numbers'):
 mike_guessdict = zip(x_range, michael_guesscount)
 mike_tempdf = pd.DataFrame(mike_guessdict)
 
-st.bar_chart(mike_tempdf)
+st.bar_chart(mike_guessdict)
 
 # michael_guesschart = plt.gca()
 # michael_guesschart.invert_yaxis()
