@@ -194,7 +194,7 @@ with st.expander('Missing Game Numbers'):
 # guess chart 
 
 michael_guesschart = px.bar(x = michael_guesscount, y = guess_range, orientation = 'h')
-michael_guesschart.show()
+st.plotly_chart(michael_guesschart)
 
 
 
