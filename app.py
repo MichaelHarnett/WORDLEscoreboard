@@ -193,7 +193,10 @@ with st.expander('Missing Game Numbers'):
     
 # guess chart 
 
-michael_guesschart = px.bar(x = michael_guesscount, y = guess_range, orientation = 'h')
+michael_guesschart = px.bar(x = michael_guesscount, y = guess_range, orientation = 'h',labels = {
+                'x' : 'Number of Games',
+                'y' : 'Guess Count'
+            })
 michael_guesschart.update_traces(hovertemplate=None)
 michael_guesschart.update_layout(hovermode="y")
 st.plotly_chart(michael_guesschart)
@@ -211,7 +214,10 @@ with st.expander('Missing Game Numbers'):
     st.write(danielle_missing)
     
 #guess chart
-danielle_guesschart = px.bar(x = danielle_guesscount, y = guess_range, orientation = 'h')
+danielle_guesschart = px.bar(x = danielle_guesscount, y = guess_range, orientation = 'h', labels = {
+                'x' : 'Number of Games',
+                'y' : 'Guess Count'
+            })
 danielle_guesschart.update_traces(hovertemplate=None)
 danielle_guesschart.update_layout(hovermode="y")
 st.plotly_chart(danielle_guesschart)
@@ -227,10 +233,15 @@ with st.expander('Missing Game Numbers'):
 
     
 #guess chart
-chris_guesschart = px.bar(x = chris_guesscount, y = guess_range, orientation = 'h')
+chris_guesschart = px.bar(x = chris_guesscount, y = guess_range, orientation = 'h', labels = {
+                'x' : 'Number of Games',
+                'y' : 'Guess Count'
+            })
 chris_guesschart.update_traces(hovertemplate=None)
 chris_guesschart.update_layout(hovermode="y")
 st.plotly_chart(chris_guesschart)
+
+
     
 ### Dad's info
 st.header('Dad')
@@ -241,7 +252,10 @@ with st.expander('Missing Game Numbers'):
     st.write(dad_missing)
     
 # guess chart
-dad_guesschart = px.bar(x = dad_guesscount, y = guess_range, orientation = 'h')
+dad_guesschart = px.bar(x = dad_guesscount, y = guess_range, orientation = 'h', labels = {
+                'x' : 'Number of Games',
+                'y' : 'Guess Count'
+            })
 dad_guesschart.update_traces(hovertemplate=None)
 dad_guesschart.update_layout(hovermode="y")
 st.plotly_chart(dad_guesschart)
