@@ -201,7 +201,8 @@ piedf.sort_values('Score', ascending = False, inplace = True)
 
 #and then added allllll togehter into one beautiful pie chart
 total_pie = px.pie(piedf, names = 'Player', values = 'Score',
-                   title = 'TOTAL WINS', template = 'plotly_dark')
+                   title = 'TOTAL WINS', template = 'plotly_dark',
+                  height = 500, width = 400)
 total_pie.update_traces(textinfo = 'label + value',pull = ([.2,0,0,0]),
                         textfont = dict(size = 20), hovertemplate = [
                             'WOW YOU\'RE WINNING','OK, YAAAAS','I mean, you\'re trying','LOSER'],
