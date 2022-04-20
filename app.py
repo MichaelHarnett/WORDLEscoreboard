@@ -216,7 +216,7 @@ total_pie.update_layout(
     title_font_size = 40,
     showlegend = False
 )
-total_pie.show()
+st.plotly_chart(total_pie)
 
 
 
