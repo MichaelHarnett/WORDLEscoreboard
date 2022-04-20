@@ -256,7 +256,7 @@ loss_pie.update_layout(#autosize = True,
     title_font_size = 40,
     showlegend = False
 )
-loss_pie.show()
+st.plotly_chat(loss_pie)
 
 
 
