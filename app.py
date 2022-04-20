@@ -203,9 +203,9 @@ piedf.sort_values('Score', ascending = False, inplace = True)
 total_pie = px.pie(piedf, names = 'Player', values = 'Score',
                    title = 'TOTAL WINS', template = 'plotly_dark')
 total_pie.update_traces(textinfo = 'label + value',pull = ([.2,0,0,0]),
-                        textfont = dict(size = 30), hovertemplate = [
+                        textfont = dict(size = 20), hovertemplate = [
                             'WOW YOU\'RE WINNING','OK, YAAAAS','I mean, you\'re trying','LOSER'],
-                       marker = dict(line = dict(color = 'white', width = [6,0,0,0])))
+                       marker = dict(line = dict(color = 'white', width = [3.5,0,0,0])))
 total_pie.update_layout(autosize = True,
     title={
         'text': "TOTAL WINS",
