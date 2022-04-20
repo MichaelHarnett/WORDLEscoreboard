@@ -206,7 +206,7 @@ total_pie.update_traces(textinfo = 'label + value',pull = ([.2,0,0,0]),
                         textfont = dict(size = 30), hovertemplate = [
                             'WOW YOU\'RE WINNING','OK, YAAAAS','I mean, you\'re trying','LOSER'],
                        marker = dict(line = dict(color = 'white', width = [6,0,0,0])))
-total_pie.update_layout(
+total_pie.update_layout(autosize = True,
     title={
         'text': "TOTAL WINS",
         'y':.92,
