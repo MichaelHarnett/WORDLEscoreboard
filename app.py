@@ -180,6 +180,47 @@ chris_guesscount = chris_guesscount[::-1]
 
 
 
+##########################
+##### WIN COMPARISON #####
+##########################
+
+#easiest way is to make lits of just the data we need
+players = ['Michael', 'Danielle','Chris','Dad']
+scores = [len(michaelwindf), len(daniellewindf), len(chriswindf), len(dadwindf)]
+
+#becaue it can be zipped into a dict
+piezip = zip(players,scores)
+
+#easily turned into a dataframe
+piedf = pd.DataFrame(piezip, columns = ['Player','Score'])
+
+#sorted so that the winner is always on top/is pulled and bordered
+piedf.sort_values('Score', ascending = False, inplace = True)
+
+
+
+#and then added allllll togehter into one beautiful pie chart
+total_pie = px.pie(piedf, names = 'Player', values = 'Score',
+                   title = 'WIN COUNTS', template = 'plotly_dark',
+                  height = 800, width = 800)
+total_pie.update_traces(textinfo = 'label + value', pull = ([.1,0,0,0]),
+                       marker = dict(line = dict(color = 'white', width = [6,0,0,0])))
+total_pie.update_layout(
+    title={
+        'text': "WIN COUNTS",
+        'y':.92,
+        'x':0.5,
+        'xanchor': 'center',
+        'yanchor': 'top'
+        },
+    title_font_size = 40,
+    showlegend = False
+)
+total_pie.show()
+
+
+
+
 
 
 
