@@ -222,6 +222,41 @@ total_pie.update_layout(
 st.plotly_chart(total_pie)
 
 
+#easiest way is to make lits of just the data we need
+players = ['Michael', 'Danielle','Chris','Dad']
+loss_scores = [michael_lossnum, danielle_lossnum, chris_lossnum, dad_lossnum]
+
+#becaue it can be zipped into a dict
+loss_piezip = zip(players,loss_scores)
+
+#easily turned into a dataframe
+loss_piedf = pd.DataFrame(loss_piezip, columns = ['Player','Losses'])
+
+#sorted so that the winner is always on top/is pulled and bordered
+loss_piedf.sort_values('Losses', ascending = False, inplace = True)
+
+
+
+#and then added allllll togehter into one beautiful pie chart
+loss_pie = px.pie(loss_piedf, names = 'Player', values = 'Losses',
+                   title = 'TOTAL LOSSES', template = 'plotly_dark', color_discrete_sequence=px.colors.sequential.RdBu,
+                  height = 600, width = 450)
+loss_pie.update_traces(textinfo = 'label + value',pull = ([.1,0,0,0]),
+                        textfont = dict(size = 20), hovertemplate = [
+                            'WOW YOU SUUUUUCK','BOOOO','maybe read a bit more?','you got this'],
+                       marker = dict(line = dict(color = 'black', width = [6,0,0,0])))
+loss_pie.update_layout(#autosize = True,
+    title={
+        'text': "TOTAL LOSSES",
+        'y':.92,
+        'x':0.5,
+        'xanchor': 'center',
+        'yanchor': 'top'
+        },
+    title_font_size = 40,
+    showlegend = False
+)
+loss_pie.show()
 
 
 
