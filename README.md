@@ -9,7 +9,7 @@ this readme will update as the project does as well.
 <br>
 <br>
 So I deployed with streamlit sharing to start displaying work, may use other methods moving forward.<br>
-the app is available [Here] https://share.streamlit.io/michaelharnett/wordlescoreboard/main/app.py <br>
+the app is available [Here] (https://share.streamlit.io/michaelharnett/wordlescoreboard/main/app.py) <br>
 Right now there is a pie chart for total wins, and total losses, and individual guess counts similar to the site itself, and currently working on a side-by-side bar chart to compare everyone's guesses in one chart<br>
 <br>
 <br>
