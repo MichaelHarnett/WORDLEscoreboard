@@ -14,4 +14,5 @@ Right now there is a pie chart for total wins, and total losses, and individual 
 <br>
 <br>
 <hr></hr>
+<br>
 Right now I sized the graphs to look better on movile devices, since that is how everyone in my family is viewing it, the pie charts specifically look dispropotiantely small on desktop. In the future I can work on dynamic sizing, but for now it works!
