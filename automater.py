@@ -162,3 +162,6 @@ chriswindf.to_csv('tables/chriswindf.csv', index = False)
 #dad
 daddf.to_csv('tables/daddf.csv', index = False)
 dadwindf.to_csv('tables/dadwindf.csv', index = False)
+
+#wordledf
+wordledf.to_csv('tables/wordledf.csv', index = False)
