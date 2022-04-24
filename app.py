@@ -292,7 +292,7 @@ melted_wins = pd.melt(windf, id_vars = ['player'], var_name = 'guesses', value_v
 
 
 #combined chart graph
-combined_chart = px.bar(windf3, x = 'variable', y = 'value', color = 'player',
+combined_chart = px.bar(melted_wins, x = 'guesses', y = 'value', color = 'player',
                          barmode= 'group', template = 'plotly_dark', title = 'COMBINED GUESS COUNTS',
                         labels = {'variable':'Guesses', 'value':'Games'})
 combined_chart.update_layout(title = {'text': 'COMBINED GUESS COUNTS',
