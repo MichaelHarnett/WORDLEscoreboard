@@ -10,7 +10,7 @@ from plotly.subplots import make_subplots
 from multiapp import MultiApp
 
 
-from pages import home, family
+from pages import home, family, savages
 
 app = MultiApp()
 
@@ -24,6 +24,7 @@ This multi-page app is using the [streamlit-multiapps](https://github.com/uprane
 # Add all your application here
 app.add_app("Who's asking?", home.app)
 app.add_app('Family', family.app)
+app.add_app('Savages', savages.app)
 # The main app
 app.run()
 

@@ -222,7 +222,10 @@ def app():
 
     st.plotly_chart(total_pie)
 
-
+    ###########################
+    #### LOSSES COMPARISON ####
+    ###########################
+    
     #easiest way is to make lits of just the data we need
     players = ['Michael', 'Danielle','Chris','Dad']
     loss_scores = [michael_lossnum, danielle_lossnum, chris_lossnum, dad_lossnum]
