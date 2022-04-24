@@ -81,7 +81,7 @@ def app():
     ##############################
 
     #me
-    michaelSAV_games = sorted(michaeSAVldf.game_num)
+    michaelSAV_games = sorted(michaelSAVdf.game_num)
     michaelSAV_missing = [item for item in range(michaelSAV_games[0], michaelSAV_games[-1]+1) if item not in michaelSAV_games]
     michaelSAV_missing_tot = len(michaelSAV_missing)
 
