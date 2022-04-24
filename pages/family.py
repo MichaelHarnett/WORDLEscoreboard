@@ -24,8 +24,8 @@ def app():
     chrisdf = pd.read_csv('./tables/chrisdf.csv')
     chriswindf = pd.read_csv('./tables/chriswindf.csv')
     #dad
-    daddf = pd.read_csv('/tables/daddf.csv')
-    dadwindf = pd.read_csv('/tables/dadwindf.csv')
+    daddf = pd.read_csv('./tables/daddf.csv')
+    dadwindf = pd.read_csv('./tables/dadwindf.csv')
 
 
 
