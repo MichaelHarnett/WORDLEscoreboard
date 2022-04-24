@@ -14,6 +14,10 @@ import sqlalchemy as db
 from sqlalchemy import create_engine, MetaData, inspect
 
 
+####################################################################
+########################## FAMILY SECTION ##########################
+####################################################################
+
 ###########################
 ### pulling fresh texts ###
 ###########################
@@ -67,7 +71,7 @@ for i in range(1,len(df)):
 # creating wordledf, df of just wordle messages
 wordledf = df    
 wordledf = df[df.wordle_check == 'Wordle']
-wordledf = wordledf.drop(columns = ['message','date','wordle_check'])
+wordledf = wordledf.drop(columns = ['message','wordle_check'])
 
 
 
@@ -165,3 +169,136 @@ dadwindf.to_csv('tables/dadwindf.csv', index = False)
 
 #wordledf
 wordledf.to_csv('tables/wordledf.csv', index = False)
+
+
+
+
+
+#####################################################################
+########################## SAVAGES SECTION ##########################
+#####################################################################
+
+
+###########################
+### pulling fresh texts ###
+###########################
+
+savagesdf = pd.read_sql("select distinct m.rowid ,m.is_from_me IsFromMe ,case when m.is_from_me = 1 then m.account else h.id end as FromPhoneNumber ,datetime((m.date / 1000000000) + 978307200, 'unixepoch', 'localtime') as TextDate, m.text MessageText,c.display_name RoomName from message as m left join handle as h on m.handle_id = h.rowid left join chat as c on m.cache_roomnames = c.room_name left join chat_handle_join as ch on c.rowid = ch.chat_id left join handle as h2 on ch.handle_id = h2.rowid where RoomName LIKE 'Savages%' order by m.date desc;", engine)
+
+
+
+#############################
+### making correct tables ###
+#############################
+
+
+savagesdf = savagesdf[['FromPhoneNumber','TextDate','MessageText']] # taking only the fields I need
+savagesdf = savagesdf.rename(columns = {'FromPhoneNumber':'player', 'TextDate':'date', 'MessageText':'message'}) #fixing names
+
+
+
+# Renaming changing the Id from phone number to our names
+savagesdf.loc[savagesdf.player == '+12017248296', 'player'] = 'kell'
+savagesdf.loc[savagesdf.player == '+12017447544', 'player'] = 'd'
+savagesdf.loc[savagesdf.player == '+18456083263', 'player'] = 'drie'
+savagesdf.loc[savagesdf.player == '+12017554735', 'player'] = 'jose'
+savagesdf.loc[savagesdf.player == '+12012706619', 'player'] = 'nick'
+savagesdf.loc[savagesdf.player == 'E:michaelcharnett@gmail.com', 'player'] = 'michael'
+savagesdf.loc[savagesdf.player == 'e:michaelcharnett@gmail.com', 'player'] = 'michael'
+
+
+
+# Creating columns
+savagesdf['wordle_check'] = ''
+savagesdf['game_num'] = ''
+savagesdf['score'] = ''
+
+# fixing indexes
+savagesdf = savagesdf.dropna()
+savagesdf = savagesdf.reset_index()
+savagesdf =savagesdf.drop(columns = ['index'])
+
+#updating values
+for i in range(1,len(savagesdf)):
+    savagesdf.loc[i,'wordle_check'] = savagesdf.loc[i,'message'][:6]
+    savagesdf.loc[i,'game_num'] = savagesdf.loc[i,'message'][7:10]
+    savagesdf.loc[i,'score'] = savagesdf.loc[i,'message'][11:14]
+    
+
+
+# creating wordledf, df of just wordle messages
+savages_wordledf = savagesdf[savagesdf.wordle_check == 'Wordle']
+savages_wordledf = savages_wordledf.drop(columns = ['message','wordle_check'])
+
+
+
+# changing scores to remove the denominator, a they're all out of 6
+savages_wordledf = savages_wordledf.reset_index()
+savages_wordledf = savages_wordledf.drop(columns = ['index'])   ##for some reason, it works if I keep resetting index
+
+# there was a blank space in nick's first entry, he must have started a text with 'wordle' ON 2/7
+savages_wordledf = savages_wordledf[savages_wordledf.game_num != '']
+
+
+for i in range(len(savages_wordledf)):
+    savages_wordledf.loc[i, 'score'] = savages_wordledf.loc[i, 'score'][0]
+
+
+
+#######################
+### cleaneingtables ###
+#######################
+
+
+# changing data types
+savages_wordledf.player = savages_wordledf.player.astype('str')
+savages_wordledf.game_num = savages_wordledf.game_num.astype('int')
+savages_wordledf.score = savages_wordledf.score.astype('str')
+
+
+#individualized tables
+michaelSAVdf = savages_wordledf[savages_wordledf.player == 'michael']
+kelldf = savages_wordledf[savages_wordledf.player == 'kell']
+#ddf = savages_wordledf[savages_wordledf.player == 'd'] # realized not playing
+#driedf = savages_wordledf[savages_wordledf.player == 'drie'] # realized not playing 
+nickdf = savages_wordledf[savages_wordledf.player == 'nick']
+josedf = savages_wordledf[savages_wordledf.player == 'jose']
+
+
+# ordering the tables
+michaelSAVdf = michaelSAVdf.sort_values(by='game_num', ascending = False)
+kelldf = kelldf.sort_values(by='game_num', ascending = False)
+#ddf = ddf.sort_values(by='game_num', ascending = False)    #not playing
+#driedf = driedf.sort_values(by='game_num', ascending = False)    #not playing
+josedf = josedf.sort_values(by='game_num', ascending = False)
+# nick sent a copule of cheat texts, all before 3/8 so tailoring his to look only after that
+nickdf = nickdf.sort_values(by='game_num', ascending = False)
+nickdf = nickdf[nickdf.date > '2022-03-09']
+
+
+# making a df of just wins to compare against
+michaelSAVwindf = michaelSAVdf[michaelSAVdf['score'].astype(str).str.isnumeric()]
+kellwindf = kelldf[kelldf['score'].astype(str).str.isnumeric()]
+josewindf = josedf[josedf['score'].astype(str).str.isnumeric()]
+nickwindf = nickdf[nickdf['score'].astype(str).str.isnumeric()]
+
+
+##############################
+#### saving dfs to folder ####
+##############################
+
+# michael - savages version
+michaelSAVdf.to_csv('tables/michaelSAVdf.csv', index = False)
+michaelSAVwindf.to_csv('tables/michaelSAVdf.csv', index = False)
+
+#Kell
+kelldf.to_csv('tables/kelldf.csv', index = False)
+kellwindf.to_csv('tables/kellwindf.csv', index = False)
+
+#Nick
+nickdf.to_csv('tables/nickdf.csv', index = False)
+nickwindf.to_csv('tables/nickwindf.csv', index = False)
+
+#Jose
+josedf.to_csv('tables/josedf.csv', index = False)
+josewindf.to_csv('tables/josewindf.csv', index = False)
