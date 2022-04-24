@@ -259,6 +259,53 @@ loss_pie.update_layout(#autosize = True,
 st.plotly_chart(loss_pie)
 
 
+###############################
+##### combined guesschart #####
+###############################
+
+#reorganzing the data to low>high for combined chart
+grouped_xlabels = ['player','1','2','3','4','5','6']
+
+michael_guesscount2 = (michael_guesscount[::-1])
+michael_guesscount2.insert(0, 'Michael')
+
+danielle_guesscount2 = (danielle_guesscount[::-1])
+danielle_guesscount2.insert(0, 'Danielle')
+
+chris_guesscount2 = (chris_guesscount[::-1])
+chris_guesscount2.insert(0, 'Chris')
+
+dad_guesscount2 = (dad_guesscount[::-1])
+dad_guesscount2.insert(0, 'Dad')
+
+
+#creating combined df
+windf = pd.DataFrame([(michael_guesscount2),
+                       (danielle_guesscount2),
+                       (chris_guesscount2),
+                       (dad_guesscount2)], columns = grouped_xlabels)
+
+
+#melting into single columns 
+melted_wins = pd.melt(windf, id_vars = ['player'], var_name = 'guesses', value_vars = ['1','2','3',
+                                                             '4','5','6'])
+
+
+#combined chart graph
+combined_chart = px.bar(windf3, x = 'variable', y = 'value', color = 'player',
+                         barmode= 'group', template = 'plotly_dark', title = 'COMBINED GUESS COUNTS',
+                        labels = {'variable':'Guesses', 'value':'Games'})
+combined_chart.update_layout(title = {'text': 'COMBINED GUESS COUNTS',
+                                       'y' : .92,
+                                       'x' : .5,
+                                       'xanchor' : 'center',
+                                       'yanchor' : 'top'},
+                              title_font_size = 40)
+
+st.plotly_chart(combined_chart)
+
+
+
 
 
 
