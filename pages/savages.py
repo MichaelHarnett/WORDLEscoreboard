@@ -21,8 +21,8 @@ def app():
     kelldf = pd.read_csv('./tables/kelldf.csv')
     kellwindf = pd.read_csv('./tables/kellwindf.csv')
     #chris
-    nicksdf = pd.read_csv('./tables/nicksdf.csv')
-    nickswindf = pd.read_csv('./tables/nickswindf.csv')
+    nickdf = pd.read_csv('./tables/nickdf.csv')
+    nickwindf = pd.read_csv('./tables/nickwindf.csv')
     #dad
     josedf = pd.read_csv('./tables/josedf.csv')
     josewindf = pd.read_csv('./tables/josewindf.csv')
