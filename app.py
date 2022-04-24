@@ -16,6 +16,8 @@ app = MultiApp()
 
 st.markdown("""
 # WORDLE SCOREBOARD
+
+I followed Chanin Nantasenamat's guide to multi-page streamlit apps [here](https://github.com/dataprofessor/multi-page-app). This is the credit he posted on his app:
 This multi-page app is using the [streamlit-multiapps](https://github.com/upraneelnihar/streamlit-multiapps) framework developed by [Praneel Nihar](https://medium.com/@u.praneel.nihar). Also check out his [Medium article](https://medium.com/@u.praneel.nihar/building-multi-page-web-app-using-streamlit-7a40d55fa5b4).
 """)
 
