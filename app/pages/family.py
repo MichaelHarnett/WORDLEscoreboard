@@ -15,11 +15,11 @@ def app():
     ### read ins ###
     ################
     #michael
-    michaeldf = pd.read_csv('tables/michaeldf.csv')
-    michaelwindf = pd.read_csv('tables/michaelwindf.csv')
+    michaeldf = pd.read_csv('../tables/michaeldf.csv')
+    michaelwindf = pd.read_csv('../tables/michaelwindf.csv')
     #danielle
-    danielledf = pd.read_csv('tables/danielledf.csv')
-    daniellewindf = pd.read_csv('tables/daniellewindf.csv')
+    danielledf = pd.read_csv('./tables/danielledf.csv')
+    daniellewindf = pd.read_csv('./tables/daniellewindf.csv')
     #chris
     chrisdf = pd.read_csv('tables/chrisdf.csv')
     chriswindf = pd.read_csv('tables/chriswindf.csv')
