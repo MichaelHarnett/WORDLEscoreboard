@@ -289,7 +289,7 @@ nickwindf = nickdf[nickdf['score'].astype(str).str.isnumeric()]
 
 # michael - savages version
 michaelSAVdf.to_csv('tables/michaelSAVdf.csv', index = False)
-michaelSAVwindf.to_csv('tables/michaelSAVdf.csv', index = False)
+michaelSAVwindf.to_csv('tables/michaelSAVwindf.csv', index = False)
 
 #Kell
 kelldf.to_csv('tables/kelldf.csv', index = False)
