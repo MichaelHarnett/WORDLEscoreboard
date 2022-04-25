@@ -268,7 +268,7 @@ def app():
     ###############################
 
     #reorganzing the data to low>high for combined chart
-    #grouped_xlabels = ['player','1','2','3','4','5','6']
+    grouped_xlabels = ['player','1','2','3','4','5','6']
 
     michaelSAV_guesscount2 = (michaelSAV_guesscount[::-1])
     michaelSAV_guesscount2.insert(0, 'Michael Michaelson')
