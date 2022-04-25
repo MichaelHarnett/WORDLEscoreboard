@@ -14,6 +14,8 @@ from pages import home, family, savages
 
 app = MultiApp()
 
+st.markdown("<h1 style='text-align: center; color: white;'>WORDLE SCOREBOARD</h1>", unsafe_allow_html=True)
+
 st.markdown("""
 # WORDLE SCOREBOARD
 
