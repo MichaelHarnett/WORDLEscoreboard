@@ -61,7 +61,7 @@ df = df.reset_index()
 df =df.drop(columns = ['index'])
 
 #updating values
-for i in range(1,len(df)):
+for i in range(len(df)):
     df.loc[i,'wordle_check'] = df.loc[i,'message'][:6]
     df.loc[i,'game_num'] = df.loc[i,'message'][7:10]
     df.loc[i,'score'] = df.loc[i,'message'][11:14]
@@ -219,7 +219,7 @@ savagesdf = savagesdf.reset_index()
 savagesdf =savagesdf.drop(columns = ['index'])
 
 #updating values
-for i in range(1,len(savagesdf)):
+for i in range(len(savagesdf)):
     savagesdf.loc[i,'wordle_check'] = savagesdf.loc[i,'message'][:6]
     savagesdf.loc[i,'game_num'] = savagesdf.loc[i,'message'][7:10]
     savagesdf.loc[i,'score'] = savagesdf.loc[i,'message'][11:14]
