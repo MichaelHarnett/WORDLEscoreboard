@@ -196,7 +196,8 @@ def app():
                    text = savagesdf.player.value_counts().values
                   )
     txt_chart.update_traces(hovertext = 'values',
-                           showlegend = False,)
+                           showlegend = False,
+                           textfont_size = 30)
 
     txt_chart.update_layout(
             title={
