@@ -302,3 +302,7 @@ nickwindf.to_csv('tables/nickwindf.csv', index = False)
 #Jose
 josedf.to_csv('tables/josedf.csv', index = False)
 josewindf.to_csv('tables/josewindf.csv', index = False)
+
+#savagesdf
+savagesdf = savages_wordledf
+savagesdf.to_csv('tables/savagesdf.csv', index = False)

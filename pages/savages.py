@@ -178,6 +178,36 @@ def app():
     jose_guesscount.append(jose5wins)
     jose_guesscount.append(jose6wins)
     jose_guesscount = jose_guesscount[::-1]
+    
+    
+    ########################
+    ###### TEXT COUNT ######
+    ########################
+    
+    txt_chart = px.bar(savagesdf,
+                   x = list(savagesdf.player.value_counts().keys().str.capitalize()),
+                   y = savagesdf.player.value_counts().values,
+                   color = list(savagesdf.player.value_counts().keys()),
+                   title = 'TOTAL TEXTS SENT',
+                   template = 'plotly_dark',
+                   labels = {'x':'Savage', 'y':'Texts Sent'},
+                   text = savagesdf.player.value_counts().values
+                  )
+    txt_chart.update_traces(hovertext = 'values',
+                           showlegend = False,)
+
+    txt_chart.update_layout(
+            title={
+            'text': "TOTAL TEXTS SENT",
+            'y':.92,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'},
+        title_font_size = 40
+    )
+    
+    st.plotly_chart(txt_chart)
+    
 
 
 
