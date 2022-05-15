@@ -17,15 +17,17 @@ def app():
     #michael
     michaelSAVdf = pd.read_csv('./tables/michaelSAVdf.csv')
     michaelSAVwindf = pd.read_csv('./tables/michaelSAVwindf.csv')
-    #danielle
+    #kelly
     kelldf = pd.read_csv('./tables/kelldf.csv')
     kellwindf = pd.read_csv('./tables/kellwindf.csv')
-    #chris
+    #nick
     nickdf = pd.read_csv('./tables/nickdf.csv')
     nickwindf = pd.read_csv('./tables/nickwindf.csv')
-    #dad
+    #jose
     josedf = pd.read_csv('./tables/josedf.csv')
     josewindf = pd.read_csv('./tables/josewindf.csv')
+    #savagesdf
+    savagesdf = pd.read_csv('./tables/savagesdf.csv')
 
 
 
